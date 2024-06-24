@@ -35,7 +35,7 @@ describe Gruf::Commander::Request do
       let(:request_params) { { width: 0, height: 7 } }
 
       it 'raises an InvalidRequest exception' do
-        expect { subject }.to raise_error(Gruf::Commander::InvalidRequest)
+        expect { subject }.to raise_error(Gruf::Commander::InvalidRequest, /Width Please enter a valid width!/)
       end
     end
   end

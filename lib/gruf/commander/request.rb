@@ -55,7 +55,7 @@ module Gruf
       # @raise [InvalidRequest] if the request is invalid
       # rubocop:disable Style/RaiseArgs
       def submit!
-        raise InvalidRequest.new(self) unless valid?
+        raise InvalidRequest.new(self, errors.full_messages) unless valid?
 
         command.call(self)
       end
